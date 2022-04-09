@@ -2,32 +2,34 @@
 
 There are at least 5 errors in this code:
 
-```js
-// This function is supposed to accept a count, and for the numbers 1 up to and including that count:
-// * Print "fizz" if the number is divisible by 3
-// * Print "buzz" if the number is divisible by 5
-// * Print "fizzbuzz" if the number is divisible by 3 and 5
-// * Otherwise print the number
+This function is supposed to accept a count, and for the numbers 1 up to and including that count:
 
-function printFizzBuzzNumbers(count){
-  const fizzBuzzNumbers = []
+* Print "fizz" if the number is divisible by 3
+* Print "buzz" if the number is divisible by 5
+* Print "fizzbuzz" if the number is divisible by 3 and 5
+* Otherwise print the number
 
-  for (let i = 0; i < count; i++) {
-      const isDivisibleBy3 = i % 3 === 0;
-      const isDivisibleBy5 = i % 5 === 0;
+```
+PROGRAM print_fizz_buzz_numbers
+    SET count TO INPUT
+    SET fizz_buzz_numbers = []
+    SET number = 1
 
-      if (isDivisibleBy3) {
-        fizzBuzzNumbers.push(i)
-      }
-      if (isDivisibleBy5) {
-        fizzBuzzNumbers.push(i)
-      }
-      if (isDivisibleBy3 && isDivisibleBy5) {
-        fizzBuzzNumbers.push(i)
-      }
-      fizzBuzzNumbers.push(i)
-  }
-}
+    WHILE number < count
+        SET modulo3 TO number % 3
+        SET is_divisible_by_3 TO modulo3 IS 0
+        SET modulo5 TO number % 5
+        SET is_divisible_by_5 TO modulo5 IS 0
+
+        IF is_divisible_by_3
+            ADD number TO fizz_buzz_numbers
+        IF is_divisible_by_5
+            ADD number TO fizz_buzz_numbers
+        IF is_divisible_by_3 AND is_divisible_by_5
+            ADD number TO fizz_buzz_numbers
+        ADD number to fizz_buzz_numbers
+
+        SET index TO index + 1
 ```
 
-Use reflection techniques and sample data to discover them. **Don't try to run the code**. Edit the function above as minimally as possible to correct the errors you find.
+Use reflection techniques and sample data to discover them. **Don't try to run the code**. Edit the program above as minimally as possible to correct the errors you find.
