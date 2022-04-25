@@ -15,21 +15,21 @@ PROGRAM print_fizz_buzz_numbers
     SET fizz_buzz_numbers = []
     SET number = 1
 
-    WHILE number < count
-        SET modulo3 TO number % 3
+    WHILE number <= count
+        SET modulo3 TO number / 3
         SET is_divisible_by_3 TO modulo3 IS 0
-        SET modulo5 TO number % 5
+        SET modulo5 TO number / 5
         SET is_divisible_by_5 TO modulo5 IS 0
 
         IF is_divisible_by_3
-            ADD number TO fizz_buzz_numbers
-        IF is_divisible_by_5
-            ADD number TO fizz_buzz_numbers
-        IF is_divisible_by_3 AND is_divisible_by_5
-            ADD number TO fizz_buzz_numbers
-        ADD number to fizz_buzz_numbers
-
-        SET index TO index + 1
+            OUTPUT "fizz"
+        ELSE IF is_divisible_by_5
+            OUTPUT "buzz"
+        ELSE IF is_divisible_by_3 AND is_divisible_by_5
+            OUTPUT "fizzbuzz"
+        ELSE
+            OUTPUT number    
+        SET number TO number + 1
 ```
 
 Use reflection techniques and sample data to discover them. **Don't try to run the code**. Edit the program above as minimally as possible to correct the errors you find.
